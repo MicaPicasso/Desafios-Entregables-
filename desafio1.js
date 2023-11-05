@@ -5,6 +5,7 @@ class ProductManager{
 
     constructor(){
         this.products=[]
+        this.productId = 1
     }
 
     getProducts(){
@@ -12,10 +13,15 @@ class ProductManager{
     }
 
     addProduct(product){
-        if(this.products.length === 0){
-            product.id =1;
-        }else{
-            product.id= this.products[this.products.length -1] + 1
+        product.id = this.productId++
+        if(!product.title || !product.description || !product.price || !product.thumbnail || !product.code || !product.stock){
+            console.error("Todos los campos son obligatorios")
+            return 
+        }
+        const codeExist= this.products.find(p => p.code === product.code)
+        if(codeExist){
+            console.error("El producto con el mismo codigo ya existe");
+            return
         }
 
         this.products.push(product);
@@ -26,7 +32,8 @@ class ProductManager{
         const product= this.products.find(product => product.id === id)
 
         if(!product){
-            return "Error"
+            console.error("Producto no encontrado");
+            return
         }else{
             return product
         }
@@ -70,11 +77,10 @@ const pruebaDeProductos = new ProductManager()
 
 pruebaDeProductos.addProduct(new Product("Producto Prueba", "Este es un producto prueba", 200, "sin imagen", "ABC123", 25))
 
-
 // mostrar el producto agregado
 console.log(pruebaDeProductos.getProducts());
 
 
 // ver si arroja error o si encuentra el producto getProductById
 
-console.log(pruebaDeProductos.getProductById(2));
+console.log(pruebaDeProductos.getProductById(4));
