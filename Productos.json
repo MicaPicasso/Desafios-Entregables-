@@ -3,18 +3,29 @@
 		"title": "Nuevo Producto",
 		"description": "Nueva descripción",
 		"price": 25,
-		"thumbnail": "-",
-		"code": "1",
-		"stock": 23,
+		"thumbnail": "sin imagen",
+		"code": "ABC123",
+		"stock": 25,
 		"id": 1
 	},
 	{
 		"title": "Producto 3",
-		"description": "Descripcion",
-		"price": 224,
-		"thumbnail": "-",
-		"code": "3",
-		"stock": 23,
+		"description": "Este es un producto prueba",
+		"price": 10,
+		"thumbnail": "sin imagen",
+		"code": "5",
+		"stock": 25,
 		"id": 3
+	}
+]	{
+		"title": "Producto 3",
+		"description": "Este es un producto prueba",
+		"price": 10,
+		"thumbnail": "sin imagen",
+		"code": "5",
+		"stock": 25,
+		"id": 3
+	}
+]
 	}
 ]
